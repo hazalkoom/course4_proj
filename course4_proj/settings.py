@@ -46,6 +46,7 @@ class Dev(Configuration):
         
         # my apps
         'movies',
+        'gh',
         
     ]
 
