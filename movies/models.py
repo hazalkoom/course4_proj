@@ -16,7 +16,7 @@ class Genre(models.Model):
     name = models.TextField(unique=True)
     
 
-class Moive(models.Model):
+class Movie(models.Model):
     class Meta:
         ordering = ["title", "year"]
         

@@ -2,7 +2,7 @@ import logging
 import re
 from datetime import timedelta
 from django.utils.timezone import now
-from movies.models import SearchTerm, Genre, Moive
+from movies.models import SearchTerm, Genre, Movie
 from omdb.django_client import get_client_from_settings
 
 logger = logging.getLogger(__name__)
@@ -57,7 +57,7 @@ def search_and_save(search):
 
     for omdb_movie in omdb_client.search(search):
         logger.info("Saving movie: '%s' / '%s'", omdb_movie.title, omdb_movie.imdb_id)
-        movie, created = Moive.objects.get_or_create(
+        movie, created = Movie.objects.get_or_create(
             imdb_id=omdb_movie.imdb_id,
             defaults={
                 "title": omdb_movie.title,
