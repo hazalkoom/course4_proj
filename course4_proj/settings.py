@@ -185,3 +185,8 @@ class Dev(Configuration):
     SESSION_COOKIE_SAMESITE = "None"
     CSRF_COOKIE_SECURE = True
     SESSION_COOKIE_SECURE = True
+    
+    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+    ADMINS = [("Ben", "ben@example.com")]
+
+
